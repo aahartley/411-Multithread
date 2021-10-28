@@ -29,7 +29,7 @@ public class students implements Runnable {
 
 		while (true) {
 			//programming for a while
-			SleepUtilities.nap(50);		
+			SleepUtilities.nap(25);		
 			//seek help from TA
 			
             //post the status of the students whenever their status change.
@@ -43,10 +43,10 @@ public class students implements Runnable {
 				try{
 			
 					board.waitHallway(name);
-					System.out.println(name+" in hallway");
+				//	System.out.println(name+" in hallway");
 					tutorRoom.hallCount++;
-					System.out.println(tutorRoom.hallCount);
-					SleepUtilities.nap(50);
+				//	System.out.println(tutorRoom.hallCount);
+					SleepUtilities.nap(25);
 		
 			
 					//enter the office if TA is available
@@ -56,18 +56,18 @@ public class students implements Runnable {
 					studentSem.release();
 					board.leaveHallway(name);
 					tutorRoom.hallCount--;
-					System.out.println(name+" leave hallway");
+				//	System.out.println(name+" leave hallway");
 					board.enterRoom(name);
 					tutorRoom.roomCount++;
-					System.out.println("ROOM COUNT: " +tutorRoom.roomCount);
-					System.out.println(name+" in room");
-					SleepUtilities.nap(50);
+				//	System.out.println("ROOM COUNT: " +tutorRoom.roomCount);
+					//System.out.println(name+" in room");
+					SleepUtilities.nap(25);
 
 					//leave the office and go back 
 					board.leaveRoom(name);
-					System.out.println(name+" leave room");
+				//	System.out.println(name+" leave room");
 					tutorRoom.roomCount--;
-					SleepUtilities.nap(50);
+					SleepUtilities.nap(25);
 
 					lockX.unlock();
 				
